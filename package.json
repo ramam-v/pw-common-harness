@@ -1,0 +1,17 @@
+{
+  "name": "pw-common-sample",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.50.1",
+    "@types/node": "^22.13.1"
+  },
+  "dependencies": {
+    "@ramam-v/common-pw": "^1.0.9"
+  }
+}
