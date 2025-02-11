@@ -1,5 +1,5 @@
 {
-  "name": "pw-common-sample",
+  "name": "pw-common-harness",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {},
@@ -12,6 +12,6 @@
     "@types/node": "^22.13.1"
   },
   "dependencies": {
-    "@ramam-v/common-pw": "^1.0.9"
+    "@ramam-v/common-pw": "^1.0.11"
   }
 }
