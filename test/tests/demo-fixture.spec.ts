@@ -1,6 +1,6 @@
 import { test, expect } from '../fixtures/basePage';
 
-test.describe('Demo Web Shop Registration Tests', () => {
+test.describe('Demo Web Shop Registration Tests - With Fixtures', () => {
     test('verify registration form interactions', async ({ page, reg, cmn }) => {
         // Generate test user data
         const testUser = {
