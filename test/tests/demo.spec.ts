@@ -9,6 +9,8 @@ const commonUtils = new CommonUtils();
 
 test.describe('Demo Web Shop Registration Tests', () => {
     test('verify form interactions and data patterns', async ({ page }) => {
+        // Use in test reporting
+        await commonUtils.reportTestStart();
         // Navigate to registration page
         await pageKeywords.navigateToUrl(page, 'https://demowebshop.tricentis.com/register');
 
@@ -52,9 +54,12 @@ test.describe('Demo Web Shop Registration Tests', () => {
         // Take screenshots at various stages
         await pageKeywords.capturePageScreenshot(page, 'registration-form-filled', false);
         await webKeywords.captureElementScreenshot(firstNameInput, 'first-name-input', 'First Name Input Field');
+        await commonUtils.reportTestEnd()
     });
 
     test('verify advanced interactions', async ({ page }) => {
+        // Use in test reporting
+        await commonUtils.reportTestStart();
         // Navigate to registration page
         await pageKeywords.navigateToUrl(page, 'https://demowebshop.tricentis.com/register');
 
@@ -82,9 +87,12 @@ test.describe('Demo Web Shop Registration Tests', () => {
             width: 800,
             height: 600
         });
+        await commonUtils.reportTestEnd()
     });
 
     test('verify data value patterns', async () => {
+        // Use in test reporting
+        await commonUtils.reportTestStart();
         // Test various data value handler patterns
         const dataPatterns = {
             // Date Patterns
@@ -134,5 +142,6 @@ test.describe('Demo Web Shop Registration Tests', () => {
                 test.expect(typeof value).toBe('string');
             }
         });
+        await commonUtils.reportTestEnd()
     });
 });

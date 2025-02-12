@@ -2,6 +2,7 @@ import { test, expect } from '../fixtures/basePage';
 
 test.describe('Demo Web Shop Registration Tests - With Fixtures', () => {
     test('verify registration form interactions', async ({ page, reg, cmn }) => {
+        await cmn.reportTestStart()
         // Generate test user data
         const testUser = {
             firstName: cmn.dataValueHandler('<FIRSTNAME>'),
@@ -20,9 +21,11 @@ test.describe('Demo Web Shop Registration Tests - With Fixtures', () => {
 
         // Take screenshots
         await reg.capturePageScreenshot('registration-form-filled', false);
+        await cmn.reportTestEnd
     });
 
-    test('verify advanced page interactions', async ({ page, reg }) => {
+    test('verify advanced page interactions', async ({ page, reg, cmn }) => {
+        await cmn.reportTestStart()
         // Perform various interactions
         await reg.doubleClickRegister();
         await reg.rightClickPageTitle();
@@ -39,9 +42,11 @@ test.describe('Demo Web Shop Registration Tests - With Fixtures', () => {
             width: 800,
             height: 600
         });
+        await cmn.reportTestEnd
     });
 
     test('verify data value patterns', async ({ cmn }) => {
+        await cmn.reportTestStart()
         // Test various data value handler patterns
         const dataPatterns = {
             // Date Patterns
@@ -91,14 +96,17 @@ test.describe('Demo Web Shop Registration Tests - With Fixtures', () => {
                 expect(typeof value).toBe('string');
             }
         });
+        await cmn.reportTestEnd
     });
 
-    test('navigation between pages', async ({ home, reg }) => {
+    test('navigation between pages', async ({ home, reg, cmn }) => {
+        await cmn.reportTestStart()
         // Navigate from home to registration
         await home.goToRegistration();
 
         // Verify registration page title
         const pageTitle = await reg.getPageTitle();
         expect(pageTitle).toBe('Register');
+        await cmn.reportTestEnd
     });
 });

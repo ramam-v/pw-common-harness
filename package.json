@@ -12,6 +12,6 @@
     "@types/node": "^22.13.1"
   },
   "dependencies": {
-    "@ramam-v/common-pw": "^1.0.11"
+    "@ramam-v/common-pw": "^1.0.12"
   }
 }
